@@ -1,163 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Saya</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      .container {
-        max-width: 400px;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
-      .profile-pic {
-        width: 200px;
-        border-radius: 50%;
-        margin-bottom: 20px;
-      }
-      h1,
-      h2 {
-        margin-bottom: 10px;
-      }
-      input[type="text"],
-      select,
-      input[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-      }
-      input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
-      input[type="submit"]:hover {
-        background-color: #45a049;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .profile-pic {
+            width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            margin-bottom: 10px;
+        }
+        input[type="text"], select, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <img class="profile-pic" src="link_gambar_anda.jpg" alt="Foto Profil" />
-      <h1>Arifin Dwi Saputra</h1>
-      <h2>NIM: 6701223110</h2>
-      <p>Kelas: D3SI-46-04</p>
+        <img class="profile-pic" src="FORMAL.jpg" alt="Foto Profil">
+        <h1>Arifin Dwi Saputra</h1>
+        <h2>NIM: 6701223110</h2>
+        <p>Kelas: D3SI-46-04</p>
 
-      <!-- Form untuk textfield -->
-      <form>
-        <input type="text" id="jumlah" placeholder="Masukkan jumlah" />
-      </form>
+        <!-- Form untuk textfield -->
+        <form>
+            <input type="text" id="jumlah" placeholder="Masukkan jumlah">
+        </form>
 
-      <!-- Form untuk select option -->
-      <form>
-        <select id="pilihan">
-          <option value="sherlock">Sherlock</option>
-          <option value="lupin">Lupin</option>
-          <option value="aladin">Aladin</option>
-        </select>
-      </form>
+        <!-- Form untuk select option -->
+        <form>
+            <select id="pilihan">
+                <option value="sherlock">Sherlock</option>
+                <option value="lupin">Lupin</option>
+                <option value="aladin">Aladin</option>
+            </select>
+        </form>
 
-      <!-- Form untuk tombol -->
-      <form>
-        <input type="submit" value="Submit" onclick="submitForm()" />
-      </form>
+        <!-- Form untuk tombol -->
+        <form>
+            <input type="submit" value="Submit" onclick="submitForm()">
+        </form>
     </div>
 
     <script>
-      // Array buku
-      let buku = [
-        { nama: "sherlock", jumlah: 2 },
-        { nama: "lupin", jumlah: 2 },
-        { nama: "aladin", jumlah: 2 },
-      ];
+        // Array buku
+        let buku = [
+            {"nama": "sherlock", "jumlah": 2},
+            {"nama": "lupin", "jumlah": 2},
+            {"nama": "aladin", "jumlah": 2}
+        ];
 
-      // Fungsi untuk menampilkan informasi buku
-      function displayBookInfo() {
-        console.log(buku);
-      }
-
-      // Fungsi untuk menambahkan informasi buku baru
-      function addBookInfo(nama, jumlah) {
-        buku.push({ nama: nama, jumlah: jumlah });
-        console.log(
-          "Buku " + nama + " dengan jumlah " + jumlah + " telah ditambahkan."
-        );
-      }
-
-      // Fungsi untuk menghapus informasi buku berdasarkan nama
-      function deleteBookInfo(nama) {
-        for (let i = 0; i < buku.length; i++) {
-          if (buku[i].nama === nama) {
-            buku.splice(i, 1);
-            console.log("Buku " + nama + " telah dihapus.");
-          }
-        }
-      }
-
-      // Fungsi untuk menampilkan informasi buku saat halaman dimuat
-      window.onload = function () {
-        displayBookInfo();
-      };
-
-      // Fungsi untuk menangani tombol submit
-      function submitForm() {
-        var jumlah = document.getElementById("jumlah").value;
-        var selectOption = document.getElementById("pilihan");
-        var optionValue =
-          selectOption.options[selectOption.selectedIndex].value;
-
-        // Memeriksa apakah textfield kosong
-        if (jumlah === "") {
-          alert("Mohon isi jumlah buku terlebih dahulu!");
-          return; // Menghentikan eksekusi fungsi jika textfield kosong
+        // Fungsi untuk menampilkan informasi buku
+        function displayBookInfo() {
+            console.log(buku);
         }
 
-        // Mencari buku berdasarkan pilihan
-        var bukuDitemukan = false;
-        var jumlahBuku = 0;
-        for (let i = 0; i < buku.length; i++) {
-          if (buku[i].nama === optionValue) {
-            bukuDitemukan = true;
-            jumlahBuku = buku[i].jumlah;
-            break;
-          }
+        // Fungsi untuk menambahkan informasi buku baru
+        function addBookInfo(nama, jumlah) {
+            buku.push({"nama": nama, "jumlah": jumlah});
+            console.log("Buku " + nama + " dengan jumlah " + jumlah + " telah ditambahkan.");
         }
 
-        // Jika buku tidak ditemukan, tampilkan alert
-        if (!bukuDitemukan) {
-          alert("Buku tidak ditemukan!");
-          return; // Menghentikan eksekusi fungsi jika buku tidak ditemukan
+        // Fungsi untuk menghapus informasi buku berdasarkan nama
+        function deleteBookInfo(nama) {
+            for (let i = 0; i < buku.length; i++) {
+                if (buku[i].nama === nama) {
+                    buku.splice(i, 1);
+                    console.log("Buku " + nama + " telah dihapus.");
+                }
+            }
         }
 
-        // Memeriksa apakah jumlah yang dimasukkan lebih banyak dari jumlah buku yang tersedia
-        if (parseInt(jumlah) > jumlahBuku) {
-          alert("Jumlah buku tidak tersedia!");
-          return; // Menghentikan eksekusi fungsi jika jumlah buku tidak tersedia
+        // Fungsi untuk menampilkan informasi buku saat halaman dimuat
+        window.onload = function() {
+            displayBookInfo();
+        };
+
+        // Fungsi untuk menangani tombol submit
+        function submitForm() {
+            var jumlah = document.getElementById("jumlah").value;
+            var selectOption = document.getElementById("pilihan");
+            var optionValue = selectOption.options[selectOption.selectedIndex].value;
+
+            // Memeriksa apakah textfield kosong
+            if (jumlah === "") {
+                alert("Mohon isi jumlah buku terlebih dahulu!");
+                return; // Menghentikan eksekusi fungsi jika textfield kosong
+            }
+
+            // Mencari buku berdasarkan pilihan
+            var bukuDitemukan = false;
+            var jumlahBuku = 0;
+            for (let i = 0; i < buku.length; i++) {
+                if (buku[i].nama === optionValue) {
+                    bukuDitemukan = true;
+                    jumlahBuku = buku[i].jumlah;
+                    break;
+                }
+            }
+
+            // Jika buku tidak ditemukan, tampilkan alert
+            if (!bukuDitemukan) {
+                alert("Buku tidak ditemukan!");
+                return; // Menghentikan eksekusi fungsi jika buku tidak ditemukan
+            }
+
+            // Memeriksa apakah jumlah yang dimasukkan lebih banyak dari jumlah buku yang tersedia
+            if (parseInt(jumlah) > jumlahBuku) {
+                alert("Jumlah buku tidak tersedia!");
+                return; // Menghentikan eksekusi fungsi jika jumlah buku tidak tersedia
+            }
+
+            // Jika jumlah yang dimasukkan kurang dari atau sama dengan stok buku yang tersedia
+            alert("Silahkan ambil buku Anda.");
         }
-
-        // Memanggil fungsi addBookInfo dengan nilai dari field jumlah dan select option yang dipilih
-        addBookInfo(optionValue, jumlah);
-
-        // Menampilkan kembali informasi buku setelah ditambahkan
-        displayBookInfo();
-      }
     </script>
-  </body>
+</body>
 </html>
