@@ -55,7 +55,7 @@
   </head>
   <body>
     <div class="container">
-      <img class="profile-pic" src="FORMAL.jpg".jpg" alt="Foto Profil" />
+      <img class="profile-pic" src="FORMAL.jpg" alt="Foto Profil" />
       <h1>Arifin Dwi Saputra</h1>
       <h2>NIM: 6701223110</h2>
       <p>Kelas: D3SI-46-04</p>
@@ -81,17 +81,53 @@
     </div>
 
     <script>
-      function submitForm() {
-        // Ambil nilai dari field jumlah
-        var jumlah = document.getElementById("jumlah").value;
+      // Array buku
+      let buku = [
+        { nama: "sherlock", jumlah: 2 },
+        { nama: "lupin", jumlah: 2 },
+        { nama: "aladin", jumlah: 2 },
+      ];
 
-        // Ambil nilai yang dipilih dari select option
+      // Fungsi untuk menampilkan informasi buku
+      function displayBookInfo() {
+        console.log(buku);
+      }
+
+      // Fungsi untuk menambahkan informasi buku baru
+      function addBookInfo(nama, jumlah) {
+        buku.push({ nama: nama, jumlah: jumlah });
+        console.log(
+          "Buku " + nama + " dengan jumlah " + jumlah + " telah ditambahkan."
+        );
+      }
+
+      // Fungsi untuk menghapus informasi buku berdasarkan nama
+      function deleteBookInfo(nama) {
+        for (let i = 0; i < buku.length; i++) {
+          if (buku[i].nama === nama) {
+            buku.splice(i, 1);
+            console.log("Buku " + nama + " telah dihapus.");
+          }
+        }
+      }
+
+      // Fungsi untuk menampilkan informasi buku saat halaman dimuat
+      window.onload = function () {
+        displayBookInfo();
+      };
+
+      // Fungsi untuk menangani tombol submit
+      function submitForm() {
+        var jumlah = document.getElementById("jumlah").value;
         var selectOption = document.getElementById("pilihan");
         var optionValue =
           selectOption.options[selectOption.selectedIndex].value;
 
-        // Tampilkan nilai yang diambil
-        alert("Jumlah: " + jumlah + "\nSelect Option: " + optionValue);
+        // Memanggil fungsi addBookInfo dengan nilai dari field jumlah dan select option yang dipilih
+        addBookInfo(optionValue, jumlah);
+
+        // Menampilkan kembali informasi buku setelah ditambahkan
+        displayBookInfo();
       }
     </script>
   </body>
