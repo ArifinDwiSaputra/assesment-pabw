@@ -32,14 +32,52 @@
       h2 {
         margin-bottom: 10px;
       }
+      input[type="text"],
+      select,
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <img class="profile-pic" src="FORMAL.jpg" alt="Foto Profil" />
       <h1>Arifin Dwi Saputra</h1>
-      <h2>6701223110</h2>
-      <p>D3SI-46-04</p>
+      <h2>NIM: 6701223110</h2>
+      <p>Kelas: D3SI-46-04</p>
+
+      <!-- Form untuk textfield -->
+      <form>
+        <input type="text" id="jumlah" placeholder="Masukkan jumlah" />
+      </form>
+
+      <!-- Form untuk select option -->
+      <form>
+        <select id="pilihan">
+          <option value="sherlock">Sherlock</option>
+          <option value="lupin">Lupin</option>
+          <option value="aladin">Aladin</option>
+        </select>
+      </form>
+
+      <!-- Form untuk tombol -->
+      <form>
+        <input type="submit" value="Submit" />
+      </form>
     </div>
   </body>
 </html>
