@@ -129,6 +129,21 @@
           return; // Menghentikan eksekusi fungsi jika textfield kosong
         }
 
+        // Mencari buku berdasarkan pilihan
+        var bukuDitemukan = false;
+        for (let i = 0; i < buku.length; i++) {
+          if (buku[i].nama === optionValue) {
+            bukuDitemukan = true;
+            break;
+          }
+        }
+
+        // Jika buku tidak ditemukan, tampilkan alert
+        if (!bukuDitemukan) {
+          alert("Buku tidak ditemukan!");
+          return; // Menghentikan eksekusi fungsi jika buku tidak ditemukan
+        }
+
         // Memanggil fungsi addBookInfo dengan nilai dari field jumlah dan select option yang dipilih
         addBookInfo(optionValue, jumlah);
 
