@@ -55,7 +55,7 @@
   </head>
   <body>
     <div class="container">
-      <img class="profile-pic" src="FORMAL.jpg" alt="Foto Profil" />
+      <img class="profile-pic" src="link_gambar_anda.jpg" alt="Foto Profil" />
       <h1>Arifin Dwi Saputra</h1>
       <h2>NIM: 6701223110</h2>
       <p>Kelas: D3SI-46-04</p>
@@ -131,9 +131,11 @@
 
         // Mencari buku berdasarkan pilihan
         var bukuDitemukan = false;
+        var jumlahBuku = 0;
         for (let i = 0; i < buku.length; i++) {
           if (buku[i].nama === optionValue) {
             bukuDitemukan = true;
+            jumlahBuku = buku[i].jumlah;
             break;
           }
         }
@@ -142,6 +144,12 @@
         if (!bukuDitemukan) {
           alert("Buku tidak ditemukan!");
           return; // Menghentikan eksekusi fungsi jika buku tidak ditemukan
+        }
+
+        // Memeriksa apakah jumlah yang dimasukkan lebih banyak dari jumlah buku yang tersedia
+        if (parseInt(jumlah) > jumlahBuku) {
+          alert("Jumlah buku tidak tersedia!");
+          return; // Menghentikan eksekusi fungsi jika jumlah buku tidak tersedia
         }
 
         // Memanggil fungsi addBookInfo dengan nilai dari field jumlah dan select option yang dipilih
