@@ -123,6 +123,12 @@
         var optionValue =
           selectOption.options[selectOption.selectedIndex].value;
 
+        // Memeriksa apakah textfield kosong
+        if (jumlah === "") {
+          alert("Mohon isi jumlah buku terlebih dahulu!");
+          return; // Menghentikan eksekusi fungsi jika textfield kosong
+        }
+
         // Memanggil fungsi addBookInfo dengan nilai dari field jumlah dan select option yang dipilih
         addBookInfo(optionValue, jumlah);
 
